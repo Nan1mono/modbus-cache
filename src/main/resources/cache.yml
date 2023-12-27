@@ -1,5 +1,5 @@
 cache:
-  minute-list:
+  minuteList:
     - slaveId: 1
       # 1-CoilStatus,2-InputStatus,3-HoldingRegister,4-InputRegisters
       function: 3
@@ -12,19 +12,19 @@ cache:
       # eightByteIntUnsigned
       # eightByteIntSigned
       # eightByteFloat
-      data-type: fourByteFloat
-      offset-list:
+      dataType: fourByteFloat
+      offsetList:
         - offset: 0
           name: point0
         - offset: 1
           name: point1
         - offset: 2
           name: point2
-  second-list:
+  secondList:
     - slaveId: 1
       function: 3
-      data-type: fourByteFloat
-      offset-list:
+      dataType: fourByteFloat
+      offsetList:
         - offset: 0
           name: point0
         - offset: 1
