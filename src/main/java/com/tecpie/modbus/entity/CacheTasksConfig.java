@@ -12,5 +12,4 @@ public class CacheTasksConfig {
     private List<CacheTask> minuteList;
 
     private List<CacheTask> secondList;
-
 }

@@ -1,6 +1,5 @@
 package com.tecpie.modbus.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import java.util.List;
@@ -18,7 +17,6 @@ public class CacheTask {
 
     private String dataType;
 
-    @JsonProperty("offset-list")
     private List<CachePoint> offsetList;
 
 }

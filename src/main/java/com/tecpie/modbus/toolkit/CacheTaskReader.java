@@ -18,12 +18,12 @@ public class CacheTaskReader {
         InputStream inputStream = classLoader.getResourceAsStream(yamlFilePath);
         Map<String, Object> config = null;
         try {
-            Map<String, Object> yamlMap = yaml.load(inputStream);
-            config = (Map<String, Object>) yamlMap.get("cache");
+            CacheTasksConfig cacheTasksConfig = yaml.loadAs(inputStream, CacheTasksConfig.class);
+            return cacheTasksConfig;
+//            config = (Map<String, Object>) yamlMap.get("cache");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return mapToObj(config, CacheTasksConfig.class);
     }
 
 
