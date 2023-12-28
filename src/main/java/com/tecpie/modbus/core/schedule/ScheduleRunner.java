@@ -37,8 +37,9 @@ public class ScheduleRunner {
         int minutePeriod = Integer.parseInt(systemConfig.get("minutePeriod").toString());
         String secondFilePath = systemConfig.get("secondFilePath").toString();
         String minuteFilePath = systemConfig.get("minuteFilePath").toString();
+        String preFileName = systemConfig.get("preFileName").toString();
         logger.info("host:{}, port:{},secondPeriod:{},minutePeriod:{}", host, port, secondPeriod, minutePeriod);
-        logger.info("secondFilePath:{}, minuteFilePath:{}", secondFilePath, minuteFilePath);
+        logger.info("secondFilePath:{}, minuteFilePath:{}, preFileName:{}", secondFilePath, minuteFilePath, preFileName);
         ModbusMaster modbusMaster = ModbusMasterConfig.getMaster(host, port);
         // 获取秒任务
         List<CacheTask> secondList = config.getSecondList();
