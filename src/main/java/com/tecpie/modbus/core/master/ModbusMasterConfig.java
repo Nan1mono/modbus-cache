@@ -10,6 +10,7 @@ import com.serotonin.modbus4j.exception.ModbusTransportException;
 import com.serotonin.modbus4j.ip.IpParameters;
 import com.serotonin.modbus4j.locator.BaseLocator;
 import com.tecpie.modbus.entity.CachePoint;
+import com.tecpie.modbus.entity.CacheTask;
 import com.tecpie.modbus.enums.DataTypeEnums;
 import com.tecpie.modbus.exception.ModbusCommunicationException;
 import org.slf4j.Logger;
@@ -97,6 +98,31 @@ public class ModbusMasterConfig {
         // 04 Input Registers类型数据读取
         BaseLocator<Number> loc = BaseLocator.inputRegister(slaveId, offset, dataType);
         return master.getValue(loc);
+    }
+
+    public static BatchResults<Integer> readBatch(ModbusMaster modbusMaster, CacheTask cacheTask, List<CachePoint> pointList) {
+        Integer slaveId = cacheTask.getSlaveId();
+        Integer function = cacheTask.getFunction();
+        String dataType = cacheTask.getDataType();
+        BatchRead<Integer> batch = new BatchRead<>();
+        for (CachePoint point : pointList) {
+            Integer offset = point.getOffset();
+            if (function == 1) {
+                batch.addLocator(offset, BaseLocator.coilStatus(slaveId, offset));
+            } else if (function == 2) {
+                batch.addLocator(offset, BaseLocator.inputStatus(slaveId, offset));
+            } else if (function == 3) {
+                batch.addLocator(offset, BaseLocator.holdingRegister(slaveId, offset, DataTypeEnums.getType(dataType)));
+            } else if (function == 4) {
+                batch.addLocator(offset, BaseLocator.inputRegister(slaveId, offset, DataTypeEnums.getType(dataType)));
+            }
+        }
+        try {
+            batch.setContiguousRequests(true);
+            return modbusMaster.send(batch);
+        } catch (ModbusTransportException | ErrorResponseException e) {
+            throw new ModbusCommunicationException(e);
+        }
     }
 
     public static Object switchRead(ModbusMaster modbusMaster, int function, int slaveId, String dataType, CachePoint point) {
