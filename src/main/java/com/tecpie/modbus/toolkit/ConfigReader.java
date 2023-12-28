@@ -1,6 +1,5 @@
 package com.tecpie.modbus.toolkit;
 
-import com.intelligt.modbus.jlibmodbus.exception.ModbusChecksumException;
 import com.tecpie.modbus.entity.CacheTasksConfig;
 import com.tecpie.modbus.exception.ModbusCommunicationException;
 import org.yaml.snakeyaml.Yaml;
