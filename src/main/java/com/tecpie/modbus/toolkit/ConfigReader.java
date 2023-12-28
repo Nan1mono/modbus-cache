@@ -1,8 +1,6 @@
 package com.tecpie.modbus.toolkit;
 
 import com.tecpie.modbus.entity.CacheTasksConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.InputStream;
@@ -10,7 +8,8 @@ import java.util.Map;
 
 public class ConfigReader {
 
-    private static final Logger logger = LoggerFactory.getLogger(ConfigReader.class);
+    private ConfigReader() {
+    }
 
     // 指定YAML文件的路径
     private static final String CACHE_YML = "cache.yml";
@@ -28,7 +27,7 @@ public class ConfigReader {
         }
     }
 
-    public static Map<String, Object> readSystem(){
+    public static Map<String, Object> readSystem() {
         Yaml yaml = new Yaml();
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream inputStream = classLoader.getResourceAsStream(SYSTEM_YML);

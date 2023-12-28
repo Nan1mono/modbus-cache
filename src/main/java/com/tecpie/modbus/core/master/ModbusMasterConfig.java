@@ -95,7 +95,6 @@ public class ModbusMasterConfig {
     }
 
     public static Object switchRead(ModbusMaster modbusMaster, int function, int slaveId, String dataType, CachePoint point) {
-        String name = point.getName();
         Integer offset = point.getOffset();
         Object value = null;
         try {

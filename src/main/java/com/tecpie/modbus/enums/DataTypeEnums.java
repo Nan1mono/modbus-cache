@@ -1,7 +1,9 @@
 package com.tecpie.modbus.enums;
 
 import com.serotonin.modbus4j.code.DataType;
+import lombok.Getter;
 
+@Getter
 public enum DataTypeEnums {
     BINARY("binary", DataType.BINARY),
     TWO_BYTE_INT_UNSIGNED("twoByteIntUnsigned", DataType.TWO_BYTE_INT_UNSIGNED),
@@ -17,14 +19,6 @@ public enum DataTypeEnums {
     private final String code;
 
     private final int dataType;
-
-    public String getCode() {
-        return code;
-    }
-
-    public int getDataType() {
-        return dataType;
-    }
 
     DataTypeEnums(String code, int dataType) {
         this.code = code;
