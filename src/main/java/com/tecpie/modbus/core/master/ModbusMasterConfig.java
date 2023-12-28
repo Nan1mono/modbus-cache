@@ -108,7 +108,6 @@ public class ModbusMasterConfig {
             } else if (function == 4) {
                 value = ModbusMasterConfig.readInputRegisters(modbusMaster, slaveId, offset, DataTypeEnums.getType(dataType));
             }
-            logger.info("Second Task ---> function:{},point:{},value:{}", function, name, value);
         } catch (ErrorResponseException | ModbusTransportException e) {
             logger.error(e.getLocalizedMessage());
         }

@@ -24,7 +24,7 @@ public class ScheduleRunner {
         // 获取系统运行配置
         Map<String, Object> systemConfig = ConfigReader.readSystem();
         String host = systemConfig.get("host").toString();
-        Integer port = Integer.valueOf(systemConfig.get("port").toString());
+        int port = Integer.parseInt(systemConfig.get("port").toString());
         int secondPeriod = Integer.parseInt(systemConfig.get("secondPeriod").toString());
         int minutePeriod = Integer.parseInt(systemConfig.get("minutePeriod").toString());
         logger.info("host:{}, port:{},secondPeriod:{},minutePeriod:{}", host, port, secondPeriod, minutePeriod);

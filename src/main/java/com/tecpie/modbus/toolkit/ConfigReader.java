@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.util.Map;
 
 public class ConfigReader {
@@ -38,20 +37,6 @@ public class ConfigReader {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-
-    public static <T> T mapToObj(Map<String, Object> source,Class<T> target) throws Exception {
-        Field[] fields = target.getDeclaredFields();
-        T o = target.newInstance();
-        for (Field field : fields) {
-            Object val;
-            if ((val = source.get(field.getName())) != null) {
-                field.setAccessible(true);
-                field.set(o, val);
-            }
-        }
-        return o;
     }
 
 }

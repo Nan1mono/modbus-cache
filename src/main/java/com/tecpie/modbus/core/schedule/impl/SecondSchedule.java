@@ -27,6 +27,7 @@ public class SecondSchedule {
                 // 获取该配置下的offset集合，并读取其中的数
                 offsetList.forEach(point -> {
                     Object value = ModbusMasterConfig.switchRead(modbusMaster, function, slaveId, dataType, point);
+                    logger.info("Second Task ---> function:{},point:{},value:{}", function, point.getName(), value);
                 });
             });
         };
