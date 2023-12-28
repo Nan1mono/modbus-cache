@@ -1,5 +1,7 @@
 package com.tecpie.modbus.core.master;
 
+import com.serotonin.modbus4j.BatchRead;
+import com.serotonin.modbus4j.BatchResults;
 import com.serotonin.modbus4j.ModbusFactory;
 import com.serotonin.modbus4j.ModbusMaster;
 import com.serotonin.modbus4j.exception.ErrorResponseException;
@@ -9,8 +11,11 @@ import com.serotonin.modbus4j.ip.IpParameters;
 import com.serotonin.modbus4j.locator.BaseLocator;
 import com.tecpie.modbus.entity.CachePoint;
 import com.tecpie.modbus.enums.DataTypeEnums;
+import com.tecpie.modbus.exception.ModbusCommunicationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 public class ModbusMasterConfig {
 

@@ -1,5 +1,6 @@
 package com.tecpie.modbus.core.schedule.impl;
 
+import com.serotonin.modbus4j.BatchResults;
 import com.serotonin.modbus4j.ModbusMaster;
 import com.tecpie.modbus.core.master.ModbusMasterConfig;
 import com.tecpie.modbus.entity.CachePoint;

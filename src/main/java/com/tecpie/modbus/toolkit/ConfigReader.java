@@ -1,6 +1,8 @@
 package com.tecpie.modbus.toolkit;
 
+import com.intelligt.modbus.jlibmodbus.exception.ModbusChecksumException;
 import com.tecpie.modbus.entity.CacheTasksConfig;
+import com.tecpie.modbus.exception.ModbusCommunicationException;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.InputStream;
@@ -23,7 +25,7 @@ public class ConfigReader {
         try {
             return yaml.loadAs(inputStream, CacheTasksConfig.class);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new ModbusCommunicationException(e);
         }
     }
 
@@ -34,7 +36,7 @@ public class ConfigReader {
         try {
             return yaml.loadAs(inputStream, Map.class);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new ModbusCommunicationException(e);
         }
     }
 
