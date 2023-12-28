@@ -19,6 +19,7 @@ minuteList:
         name: point1
       - offset: 2
         name: point2
+
 secondList:
   - slaveId: 1
     function: 3

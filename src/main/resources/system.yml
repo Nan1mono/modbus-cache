@@ -1,0 +1,4 @@
+host: 192.168.66.128
+port: 502
+secondPeriod: 1
+minutePeriod: 1
