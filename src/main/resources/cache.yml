@@ -1,16 +1,6 @@
 minuteList:
   - slaveId: 1
-    # 1-CoilStatus,2-InputStatus,3-HoldingRegister,4-InputRegisters
     function: 3
-    # binary
-    # twoByteIntUnsigned
-    # twoByteIntSigned
-    # fourByteIntUnsigned
-    # fourByteIntSigned
-    # fourByteFloat
-    # eightByteIntUnsigned
-    # eightByteIntSigned
-    # eightByteFloat
     dataType: fourByteFloat
     offsetList:
       - offset: 0
