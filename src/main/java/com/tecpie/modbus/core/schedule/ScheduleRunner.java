@@ -55,7 +55,7 @@ public class ScheduleRunner {
             // offset
             List<CachePoint> offsetList = t.getOffsetList();
             // 批量读取点位信息
-            BatchResults<Integer> results = ModbusMasterConfig.readBatch(modbusMaster, t, offsetList);
+            BatchResults<Integer> results = ModbusMasterConfig.readBatch(modbusMaster, t);
             List<String> lineList = new ArrayList<>();
             // 生成写入文件
             String format = DateTimeUtil.format(LocalDateTime.now(), "yyyyMMdd HHmm");

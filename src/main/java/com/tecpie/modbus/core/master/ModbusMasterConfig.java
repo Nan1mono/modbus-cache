@@ -100,10 +100,18 @@ public class ModbusMasterConfig {
         return master.getValue(loc);
     }
 
-    public static BatchResults<Integer> readBatch(ModbusMaster modbusMaster, CacheTask cacheTask, List<CachePoint> pointList) {
+    /**
+     * 读取批处理
+     *
+     * @param modbusMaster Modbus主线程
+     * @param cacheTask    读取寄存器
+     * @return {@link BatchResults}<{@link Integer}>
+     */
+    public static BatchResults<Integer> readBatch(ModbusMaster modbusMaster, CacheTask cacheTask) {
         Integer slaveId = cacheTask.getSlaveId();
         Integer function = cacheTask.getFunction();
         String dataType = cacheTask.getDataType();
+        List<CachePoint> pointList = cacheTask.getOffsetList();
         BatchRead<Integer> batch = new BatchRead<>();
         for (CachePoint point : pointList) {
             Integer offset = point.getOffset();
