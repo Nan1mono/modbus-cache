@@ -133,6 +133,7 @@ public class ModbusMasterConfig {
         }
     }
 
+    @SuppressWarnings("unused")
     public static Object switchRead(ModbusMaster modbusMaster, int function, int slaveId, String dataType, CachePoint point) {
         Integer offset = point.getOffset();
         Object value = null;
