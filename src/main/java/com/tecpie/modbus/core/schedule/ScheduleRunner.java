@@ -27,7 +27,10 @@ public class ScheduleRunner {
         int port = Integer.parseInt(systemConfig.get("port").toString());
         int secondPeriod = Integer.parseInt(systemConfig.get("secondPeriod").toString());
         int minutePeriod = Integer.parseInt(systemConfig.get("minutePeriod").toString());
+        String secondFilePath = systemConfig.get("secondFilePath").toString();
+        String minuteFilePath = systemConfig.get("minuteFilePath").toString();
         logger.info("host:{}, port:{},secondPeriod:{},minutePeriod:{}", host, port, secondPeriod, minutePeriod);
+        logger.info("secondFilePath:{}, minuteFilePath:{}", secondFilePath, minuteFilePath);
         ModbusMaster modbusMaster = ModbusMasterConfig.getMaster(host, port);
         // 获取秒任务
         List<CacheTask> secondList = config.getSecondList();
@@ -35,8 +38,8 @@ public class ScheduleRunner {
         List<CacheTask> minuteList = config.getMinuteList();
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(2);
         // 使用scheduleAtFixedRate方法分别安排任务1和任务2
-        scheduler.scheduleAtFixedRate(MinuteSchedule.run(minuteList, modbusMaster), 0, minutePeriod, TimeUnit.MINUTES);
-        scheduler.scheduleAtFixedRate(SecondSchedule.run(secondList, modbusMaster), 0, secondPeriod, TimeUnit.SECONDS);
+        scheduler.scheduleAtFixedRate(MinuteSchedule.run(minuteList, modbusMaster, minuteFilePath), 0, minutePeriod, TimeUnit.MINUTES);
+        scheduler.scheduleAtFixedRate(SecondSchedule.run(secondList, modbusMaster, secondFilePath), 0, secondPeriod, TimeUnit.SECONDS);
     }
 
 }
