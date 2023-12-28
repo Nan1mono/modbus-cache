@@ -13,4 +13,8 @@ public class CachePoint {
 
     private String name;
 
+    private String plant;
+
+    private String desc;
+
 }

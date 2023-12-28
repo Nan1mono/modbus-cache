@@ -64,7 +64,7 @@ public class ScheduleRunner {
             offsetList.forEach(point -> {
                 String value = results.getValue(point.getOffset()).toString();
                 logger.info("{} ---> function:{},point:{},value:{}", filePath + fileName, t.getFunction(), point.getName(), value);
-                lineList.add(String.format("%s,%s,%s", format, point.getName(), value));
+                lineList.add(String.format("%s,%s,%s,%s,%s", format, point.getOffset(), value, point.getPlant(), point.getDesc()));
             });
             try {
                 FileUtil.writeLines(file, StandardCharsets.UTF_8.toString(), lineList, "\n", true);
