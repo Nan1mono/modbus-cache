@@ -30,4 +30,13 @@ public enum DataTypeEnums {
         this.code = code;
         this.dataType = dataType;
     }
+
+    public static int getType(String type){
+        for (DataTypeEnums dataTypeEnums : DataTypeEnums.values()){
+            if (dataTypeEnums.getCode().equals(type)){
+                return dataTypeEnums.getDataType();
+            }
+        }
+        return -1;
+    }
 }

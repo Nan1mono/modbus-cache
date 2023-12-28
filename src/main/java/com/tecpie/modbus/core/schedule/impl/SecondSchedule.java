@@ -1,9 +1,6 @@
 package com.tecpie.modbus.core.schedule.impl;
 
 import com.serotonin.modbus4j.ModbusMaster;
-import com.serotonin.modbus4j.exception.ErrorResponseException;
-import com.serotonin.modbus4j.exception.ModbusInitException;
-import com.serotonin.modbus4j.exception.ModbusTransportException;
 import com.tecpie.modbus.core.master.ModbusMasterConfig;
 import com.tecpie.modbus.entity.CachePoint;
 import com.tecpie.modbus.entity.CacheTask;
@@ -27,18 +24,10 @@ public class SecondSchedule {
                 String dataType = t.getDataType();
                 // offset
                 List<CachePoint> offsetList = t.getOffsetList();
-                    // 获取该配置下的offset集合，并读取其中的数
-                    offsetList.forEach(point -> {
-                        String name = point.getName();
-                        Integer offset = point.getOffset();
-                        Boolean value = null;
-                        try {
-                            value = ModbusMasterConfig.readCoilStatus(modbusMaster, slaveId, offset);
-                            logger.info("Second Task ---> point:{},value:{}", name, value);
-                        } catch (ModbusInitException | ErrorResponseException | ModbusTransportException e) {
-                            logger.error(e.getLocalizedMessage());
-                        }
-                    });
+                // 获取该配置下的offset集合，并读取其中的数
+                offsetList.forEach(point -> {
+                    Object value = ModbusMasterConfig.switchRead(modbusMaster, function, slaveId, dataType, point);
+                });
             });
         };
     }

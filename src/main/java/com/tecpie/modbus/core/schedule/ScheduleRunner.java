@@ -21,7 +21,6 @@ public class ScheduleRunner {
     private static final Logger logger = LoggerFactory.getLogger(ScheduleRunner.class);
 
     public void schedule(CacheTasksConfig config) {
-
         // 获取系统运行配置
         Map<String, Object> systemConfig = ConfigReader.readSystem();
         String host = systemConfig.get("host").toString();

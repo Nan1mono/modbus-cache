@@ -22,7 +22,7 @@ minuteList:
 
 secondList:
   - slaveId: 1
-    function: 3
+    function: 1
     dataType: fourByteFloat
     offsetList:
       - offset: 0
