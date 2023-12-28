@@ -63,7 +63,7 @@ public class ScheduleRunner {
             File file = new File(filePath + fileName);
             offsetList.forEach(point -> {
                 String value = results.getValue(point.getOffset()).toString();
-                logger.info("{} ---> function:{},point:{},value:{}", filePath, t.getFunction(), point.getName(), value);
+                logger.info("{} ---> function:{},point:{},value:{}", filePath + fileName, t.getFunction(), point.getName(), value);
                 lineList.add(String.format("%s,%s,%s", format, point.getName(), value));
             });
             try {
