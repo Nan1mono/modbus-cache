@@ -15,6 +15,4 @@ public class CachePoint {
 
     private String plant;
 
-    private String desc;
-
 }

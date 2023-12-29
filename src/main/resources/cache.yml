@@ -2,35 +2,31 @@ minuteList:
   - slaveId: 1
     function: 3
     dataType: fourByteFloat
+    address: 0
     offsetList:
       - offset: 0
-        name: point0
+        name: AVC_STATUS
         plant: ZJ0001
-        desc: AVC_STATUS
       - offset: 1
-        name: point1
+        name: DWPL
         plant: ZJ0001
-        desc: DWPL
       - offset: 2
-        name: point2
+        name: AGC_STATUS
         plant: ZJ0002
-        desc: AGC_STATUS
 
 secondList:
-  - slaveId: 1
+  - slaveId: 2
     function: 1
     dataType: fourByteFloat
+    address: 100
     offsetList:
       - offset: 0
-        name: point0
+        name: RJH_DATA
         plant: ZJ0001
-        desc: RJH_DATA
       - offset: 1
-        name: point1
+        name: SSJH1
         plant: ZJ0001
-        desc: SSJH1
       - offset: 2
-        name: point2
+        name: RJH_DATA
         plant: ZJ0002
-        desc: RJH_DATA
 

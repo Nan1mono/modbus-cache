@@ -38,6 +38,7 @@ public class ScheduleRunner {
         String secondFilePath = systemConfig.get("secondFilePath").toString();
         String minuteFilePath = systemConfig.get("minuteFilePath").toString();
         String preFileName = systemConfig.get("preFileName").toString();
+        String fileExtension = systemConfig.get("fileExtension").toString();
         logger.info("host:{}, port:{},secondPeriod:{},minutePeriod:{}", host, port, secondPeriod, minutePeriod);
         logger.info("secondFilePath:{}, minuteFilePath:{}, preFileName:{}", secondFilePath, minuteFilePath, preFileName);
         ModbusMaster modbusMaster = ModbusMasterConfig.getMaster(host, port);
@@ -47,11 +48,11 @@ public class ScheduleRunner {
         List<CacheTask> minuteList = config.getMinuteList();
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(2);
         // 使用scheduleAtFixedRate方法分别安排任务1和任务2
-        scheduler.scheduleAtFixedRate(run(minuteList, modbusMaster, minuteFilePath), 0, minutePeriod, TimeUnit.MINUTES);
-        scheduler.scheduleAtFixedRate(run(secondList, modbusMaster, secondFilePath), 0, secondPeriod, TimeUnit.SECONDS);
+        scheduler.scheduleAtFixedRate(run(minuteList, modbusMaster, minuteFilePath, preFileName, fileExtension), 0, minutePeriod, TimeUnit.MINUTES);
+        scheduler.scheduleAtFixedRate(run(secondList, modbusMaster, secondFilePath, preFileName, fileExtension), 0, secondPeriod, TimeUnit.SECONDS);
     }
 
-    public static Runnable run(List<CacheTask> cacheTaskList, ModbusMaster modbusMaster, String filePath) {
+    public static Runnable run(List<CacheTask> cacheTaskList, ModbusMaster modbusMaster, String filePath, String preFileName, String fileExtension) {
         return () -> cacheTaskList.forEach(t -> {
             // offset
             List<CachePoint> offsetList = t.getOffsetList();
@@ -60,12 +61,12 @@ public class ScheduleRunner {
             List<String> lineList = new ArrayList<>();
             // 生成写入文件
             String format = DateTimeUtil.format(LocalDateTime.now(), "yyyyMMdd HHmm");
-            String fileName = format + ".txt";
-            File file = new File(filePath + fileName);
+            String fileName = format + fileExtension;
+            File file = new File(filePath + preFileName + fileName);
             offsetList.forEach(point -> {
                 String value = results.getValue(point.getOffset()).toString();
-                logger.info("{} ---> function:{},point:{},value:{}", filePath + fileName, t.getFunction(), point.getName(), value);
-                lineList.add(String.format("%s,%s,%s,%s,%s", format, point.getOffset(), value, point.getPlant(), point.getDesc()));
+                logger.info("{} ---> function:{},point:{},value:{}", filePath + fileName + fileExtension, t.getFunction(), point.getName(), value);
+                lineList.add(String.format("%s,%s,%s,%s,%s", format, point.getOffset(), value, point.getPlant(), point.getName()));
             });
             try {
                 FileUtil.writeLines(file, StandardCharsets.UTF_8.toString(), lineList, "\n", true);

@@ -17,6 +17,8 @@ public class CacheTask {
 
     private String dataType;
 
+    private Integer address;
+
     private List<CachePoint> offsetList;
 
 }

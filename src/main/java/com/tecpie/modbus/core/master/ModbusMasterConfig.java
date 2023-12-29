@@ -111,18 +111,19 @@ public class ModbusMasterConfig {
         Integer slaveId = cacheTask.getSlaveId();
         Integer function = cacheTask.getFunction();
         String dataType = cacheTask.getDataType();
+        Integer address = cacheTask.getAddress();
         List<CachePoint> pointList = cacheTask.getOffsetList();
         BatchRead<Integer> batch = new BatchRead<>();
         for (CachePoint point : pointList) {
             Integer offset = point.getOffset();
             if (function == 1) {
-                batch.addLocator(offset, BaseLocator.coilStatus(slaveId, offset));
+                batch.addLocator(offset, BaseLocator.coilStatus(slaveId, offset+address));
             } else if (function == 2) {
-                batch.addLocator(offset, BaseLocator.inputStatus(slaveId, offset));
+                batch.addLocator(offset, BaseLocator.inputStatus(slaveId, offset+address));
             } else if (function == 3) {
-                batch.addLocator(offset, BaseLocator.holdingRegister(slaveId, offset, DataTypeEnums.getType(dataType)));
+                batch.addLocator(offset, BaseLocator.holdingRegister(slaveId, offset+address, DataTypeEnums.getType(dataType)));
             } else if (function == 4) {
-                batch.addLocator(offset, BaseLocator.inputRegister(slaveId, offset, DataTypeEnums.getType(dataType)));
+                batch.addLocator(offset, BaseLocator.inputRegister(slaveId, offset+address, DataTypeEnums.getType(dataType)));
             }
         }
         try {

@@ -3,5 +3,6 @@ port: 502
 secondPeriod: 1
 minutePeriod: 1
 preFileName: SIS_
+fileExtension: .txt
 secondFilePath: D:/modbusFile/second/
 minuteFilePath: D:/modbusFile/minute/
