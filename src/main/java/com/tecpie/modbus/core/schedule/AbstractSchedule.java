@@ -44,7 +44,7 @@ public abstract class AbstractSchedule {
         File file = new File(filePath + preFileName + fileName);
         offsetList.forEach(point -> {
             String value = results.getValue(point.getOffset()).toString();
-            logger.info("{} ---> function:{},point:{},value:{}", filePath + fileName, cacheTask.getFunction(), point.getName(), value);
+            logger.info("{} ---> function:{},point:{},value:{}", filePath + preFileName + fileName, cacheTask.getFunction(), point.getName(), value);
             lineList.add(String.format("%s,%s,%s,%s,%s", format, point.getOffset(), value, point.getPlant(), point.getName()));
         });
         try {
