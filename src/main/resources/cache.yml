@@ -1,32 +1,26 @@
 minuteList:
   - slaveId: 1
-    function: 3
+    function: 4
     dataType: fourByteFloat
     address: 0
     offsetList:
       - offset: 0
         name: AVC_STATUS
         plant: ZJ0001
-      - offset: 1
+      - offset: 2
         name: DWPL
         plant: ZJ0001
-      - offset: 2
-        name: AGC_STATUS
-        plant: ZJ0002
 
 secondList:
-  - slaveId: 2
-    function: 1
+  - slaveId: 1
+    function: 4
     dataType: fourByteFloat
-    address: 100
+    address: 0
     offsetList:
       - offset: 0
-        name: RJH_DATA
-        plant: ZJ0001
-      - offset: 1
-        name: SSJH1
+        name: AVC_STATUS
         plant: ZJ0001
       - offset: 2
-        name: RJH_DATA
-        plant: ZJ0002
+        name: DWPL
+        plant: ZJ0001
 

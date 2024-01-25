@@ -1,23 +1,15 @@
 package com.tecpie.modbus.core.schedule;
 
-import com.serotonin.modbus4j.BatchResults;
 import com.serotonin.modbus4j.ModbusMaster;
 import com.tecpie.modbus.core.master.ModbusMasterConfig;
-import com.tecpie.modbus.entity.CachePoint;
+import com.tecpie.modbus.core.schedule.impl.MinuteSchedule;
+import com.tecpie.modbus.core.schedule.impl.SecondSchedule;
 import com.tecpie.modbus.entity.CacheTask;
 import com.tecpie.modbus.entity.CacheTasksConfig;
-import com.tecpie.modbus.exception.ModbusCommunicationException;
 import com.tecpie.modbus.toolkit.ConfigReader;
-import com.tecpie.modbus.toolkit.DateTimeUtil;
-import com.tecpie.modbus.toolkit.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executors;
@@ -37,10 +29,12 @@ public class ScheduleRunner {
         int minutePeriod = Integer.parseInt(systemConfig.get("minutePeriod").toString());
         String secondFilePath = systemConfig.get("secondFilePath").toString();
         String minuteFilePath = systemConfig.get("minuteFilePath").toString();
-        String preFileName = systemConfig.get("preFileName").toString();
+        String secondPreFileName = systemConfig.get("secondPreFileName").toString();
+        String minutePreFileName = systemConfig.get("minutePreFileName").toString();
         String fileExtension = systemConfig.get("fileExtension").toString();
         logger.info("host:{}, port:{},secondPeriod:{},minutePeriod:{}", host, port, secondPeriod, minutePeriod);
-        logger.info("secondFilePath:{}, minuteFilePath:{}, preFileName:{}", secondFilePath, minuteFilePath, preFileName);
+        logger.info("secondFilePath:{}, minuteFilePath:{}, secondPreFileName:{}, minutePreFileName:{}",
+                secondFilePath, minuteFilePath, secondPreFileName, minutePreFileName);
         ModbusMaster modbusMaster = ModbusMasterConfig.getMaster(host, port);
         // 获取秒任务
         List<CacheTask> secondList = config.getSecondList();
@@ -48,32 +42,10 @@ public class ScheduleRunner {
         List<CacheTask> minuteList = config.getMinuteList();
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(2);
         // 使用scheduleAtFixedRate方法分别安排任务1和任务2
-        scheduler.scheduleAtFixedRate(run(minuteList, modbusMaster, minuteFilePath, preFileName, fileExtension), 0, minutePeriod, TimeUnit.MINUTES);
-        scheduler.scheduleAtFixedRate(run(secondList, modbusMaster, secondFilePath, preFileName, fileExtension), 0, secondPeriod, TimeUnit.SECONDS);
-    }
-
-    public static Runnable run(List<CacheTask> cacheTaskList, ModbusMaster modbusMaster, String filePath, String preFileName, String fileExtension) {
-        return () -> cacheTaskList.forEach(t -> {
-            // offset
-            List<CachePoint> offsetList = t.getOffsetList();
-            // 批量读取点位信息
-            BatchResults<Integer> results = ModbusMasterConfig.readBatch(modbusMaster, t);
-            List<String> lineList = new ArrayList<>();
-            // 生成写入文件
-            String format = DateTimeUtil.format(LocalDateTime.now(), "yyyyMMdd HHmm");
-            String fileName = format + fileExtension;
-            File file = new File(filePath + preFileName + fileName);
-            offsetList.forEach(point -> {
-                String value = results.getValue(point.getOffset()).toString();
-                logger.info("{} ---> function:{},point:{},value:{}", filePath + fileName + fileExtension, t.getFunction(), point.getName(), value);
-                lineList.add(String.format("%s,%s,%s,%s,%s", format, point.getOffset(), value, point.getPlant(), point.getName()));
-            });
-            try {
-                FileUtil.writeLines(file, StandardCharsets.UTF_8.toString(), lineList, "\n", true);
-            } catch (IOException e) {
-                throw new ModbusCommunicationException(e);
-            }
-        });
+        AbstractSchedule secondSchedule = new SecondSchedule(secondFilePath, secondPreFileName, fileExtension);
+        AbstractSchedule minuteSchedule = new MinuteSchedule(minuteFilePath, minutePreFileName, fileExtension);
+        scheduler.scheduleAtFixedRate(minuteSchedule.run(minuteList, modbusMaster), 0, minutePeriod, TimeUnit.MINUTES);
+        scheduler.scheduleAtFixedRate(secondSchedule.run(secondList, modbusMaster), 0, secondPeriod, TimeUnit.SECONDS);
     }
 
 }

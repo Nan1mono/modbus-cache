@@ -1,8 +1,10 @@
+#host: 172.20.72.100
 host: 192.168.66.128
 port: 502
 secondPeriod: 1
 minutePeriod: 1
-preFileName: SIS_
+secondPreFileName: SIS_SECOND_
+minutePreFileName: SIS_MINUTE_
 fileExtension: .txt
 secondFilePath: D:/modbusFile/second/
 minuteFilePath: D:/modbusFile/minute/
