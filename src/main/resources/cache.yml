@@ -6,364 +6,364 @@ minuteList:
     offsetList:
       - offset: 1
         name: HBSN_DCS3_30BAT01XQ01
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 3
         name: HBSN_DCS3_30BAT01XQ02
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 5
         name: HBSN_DCS3_30BAT01PT001XQ01
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 7
         name: HBSN_DCS3_30BAT01PT001XQ02
         plant: ZJ0002
       - offset: 9
         name: HBSN_DCS3_30BAT01PT001XQ03
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 11
         name: HBSN_DCS3_30BAT01PT002XQ01
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 13
         name: HBSN_DCS3_31CKN01AO01
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 15
         name: HBSN_DCS3_31CKN01AO02
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 17
         name: HBSN_DCS3_32CKN01AO01
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 19
         name: HBSN_DCS3_32CKN01AO02
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 31
         name: HBSN_DCS3_30AGC00CBA00R101
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 33
         name: HBSN_DCS3_30CBA00AGC00S106
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 35
         name: HBSN_DCS3_30CBA00AGC00S107
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 37
         name: DCS1_10BAT01XQ01
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 39
         name: DCS1_10BAT01XQ02
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 41
         name: DCS1_10MKA01XQ01
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 43
         name: DCS1_10MKA01XQ02
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 45
         name: DCS1_10BAT01PT001XQ01
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 47
         name: DCS1_10BAT01PT001XQ02
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 49
         name: DCS1_10BAT01PT001XQ03
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 51
         name: DCS1_10BAT01PT002XQ01
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 53
         name: DCS1_10AGC00CBA00R001
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 55
         name: DCS1_10AGC00CBA00S004
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 57
         name: DCS1_10AGC00CBA00S005
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 59
         name: FDFHY1
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 61
         name: FDFHY2
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 63
         name: FDFHY3
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 65
         name: FDFHY4
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 67
         name: FDFHY5
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 69
         name: FDFHY6
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 71
         name: FDFHY7
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 73
         name: FDFHY8
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 75
         name: FDFHY9
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 77
         name: FDFHY10
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 79
         name: FDFHY11
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 81
         name: FDFHY12
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 83
         name: FDFHY13
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 85
         name: FDFHY14
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 87
         name: FDFHY15
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 89
         name: FDFHY16
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 91
         name: FDFHY17
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 93
         name: FDFHY18
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 95
         name: FDFHY19
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 97
         name: FDFHY20
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 99
         name: FDFHY21
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 101
         name: FDFHY22
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 103
         name: FDFHY23
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 105
         name: FDFHY24
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 107
         name: FDFHY25
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 109
         name: FDFHY26
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 111
         name: FDFHY27
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 113
         name: FDFHY28
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 115
         name: FDFHY29
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 117
         name: FDFHY30
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 119
         name: FDFHY31
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 121
         name: FDFHY32
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 123
         name: FDFHY33
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 125
         name: FDFHY34
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 127
         name: FDFHY35
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 129
         name: FDFHY36
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 131
         name: FDFHY37
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 133
         name: FDFHY38
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 135
         name: FDFHY39
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 137
         name: FDFHY40
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 139
         name: FDFHY41
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 141
         name: FDFHY42
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 143
         name: FDFHY43
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 145
         name: FDFHY44
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 147
         name: FDFHY45
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 149
         name: FDFHY46
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 151
         name: FDFHY47
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 153
         name: FDFHY48
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 155
         name: FDFHY49
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 157
         name: FDFHY50
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 159
         name: FDFHY51
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 161
         name: FDFHY52
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 163
         name: FDFHY53
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 165
         name: FDFHY54
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 167
         name: FDFHY55
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 169
         name: FDFHY56
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 171
         name: FDFHY57
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 173
         name: FDFHY58
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 175
         name: FDFHY59
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 177
         name: FDFHY60
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 179
         name: FDFHY61
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 181
         name: FDFHY62
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 183
         name: FDFHY63
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 185
         name: FDFHY64
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 187
         name: FDFHY65
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 189
         name: FDFHY66
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 191
         name: FDFHY67
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 193
         name: FDFHY68
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 195
         name: FDFHY69
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 197
         name: FDFHY70
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 199
         name: FDFHY71
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 201
         name: FDFHY72
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 203
         name: FDFHY73
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 205
         name: FDFHY74
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 207
         name: FDFHY75
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 209
         name: FDFHY76
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 211
         name: FDFHY77
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 213
         name: FDFHY78
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 215
         name: FDFHY79
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 217
         name: FDFHY80
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 219
         name: FDFHY81
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 221
         name: FDFHY82
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 223
         name: FDFHY83
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 225
         name: FDFHY84
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 227
         name: FDFHY85
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 229
         name: FDFHY86
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 231
         name: FDFHY87
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 233
         name: FDFHY88
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 235
         name: FDFHY89
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 237
         name: FDFHY90
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 239
         name: FDFHY91
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 241
         name: FDFHY92
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 243
         name: FDFHY93
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 245
         name: FDFHY94
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 247
         name: FDFHY95
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 249
         name: FDFHY96
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 251
         name: DCS2_20BAT01XQ01
         plant: ZJ0002
@@ -687,27 +687,27 @@ minuteList:
         plant: ZJ0002
   - slaveId: 1
     function: 2
-    dataType: fourByteFloat
+    dataType: binary
     address: -1
     offsetList:
       - offset: 1
         name: DCS1_10AGC00CBA00R301
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 2
         name: DCS1_10AGC00CBA00R302
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 3
         name: DCS1_10AGC00CBA00S301
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 4
         name: DCS1_10AGC00CBA00S305
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 5
         name: DCS1_10AGC00CBA00S306
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 6
         name: DCS1_10DEH00DI005R
-        plant: ZJ0002
+        plant: ZJ0001
       - offset: 7
         name: DCS2_20AGC00CBA00R301
         plant: ZJ0002
@@ -728,16 +728,16 @@ minuteList:
         plant: ZJ0002
       - offset: 13
         name: HBSN_DCS3_30AGC00CBA00R001
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 14
         name: HBSN_DCS3_30AGC00CBA00R002
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 15
         name: HBSN_DCS3_30CBA00AGC00S002
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 16
         name: HBSN_DCS3_30CBA00AGC00S005
-        plant: ZJ0002
+        plant: ZJ0003
       - offset: 17
         name: HBSN_DCS3_30CBA00AGC00S006
-        plant: ZJ0002
+        plant: ZJ0003
