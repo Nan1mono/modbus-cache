@@ -1,5 +1,5 @@
-#host: 172.20.72.100
-host: 192.168.66.128
+host: 172.16.30.100
+#host: 192.168.66.128
 port: 502
 secondPeriod: 1
 minutePeriod: 1
