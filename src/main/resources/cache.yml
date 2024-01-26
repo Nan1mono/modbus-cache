@@ -741,3 +741,57 @@ minuteList:
       - offset: 17
         name: HBSN_DCS3_30CBA00AGC00S006
         plant: ZJ0003
+
+secondList:
+  - slaveId: 1
+    function: 4
+    dataType: fourByteFloat
+    address: 0
+    offsetList:
+      - offset: 55
+        name: DCS1_10AGC00CBA00S004
+        plant: ZJ0001
+      - offset: 57
+        name: DCS1_10AGC00CBA00S005
+        plant: ZJ0001
+      - offset: 269
+        name: DCS2_20AGC00CBA00S004
+        plant: ZJ0002
+      - offset: 271
+        name: DCS2_20AGC00CBA00S005
+        plant: ZJ0002
+  - slaveId: 1
+    function: 1
+    dataType: binary
+    address: -1
+    offsetList:
+      - offset: 1
+        name: DCS1_10AGC00CBA00R301
+        plant: ZJ0001
+      - offset: 2
+        name: DCS1_10AGC00CBA00R302
+        plant: ZJ0001
+      - offset: 3
+        name: DCS1_10AGC00CBA00S301
+        plant: ZJ0001
+      - offset: 7
+        name: DCS2_20AGC00CBA00R301
+        plant: ZJ0002
+      - offset: 8
+        name: DCS2_20AGC00CBA00R302
+        plant: ZJ0002
+      - offset: 9
+        name: DCS2_20AGC00CBA00S301
+        plant: ZJ0002
+      - offset: 13
+        name: HBSN_DCS3_30AGC00CBA00R001
+        plant: ZJ0003
+      - offset: 14
+        name: HBSN_DCS3_30AGC00CBA00R002
+        plant: ZJ0003
+      - offset: 15
+        name: HBSN_DCS3_30CBA00AGC00S002
+        plant: ZJ0003
+
+
+
