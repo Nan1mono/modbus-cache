@@ -761,7 +761,7 @@ secondList:
         name: DCS2_20AGC00CBA00S005
         plant: ZJ0002
   - slaveId: 1
-    function: 1
+    function: 2
     dataType: binary
     address: -1
     offsetList:
